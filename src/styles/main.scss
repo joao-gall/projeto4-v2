@@ -1,0 +1,61 @@
+@use 'variaveis';
+@use 'hero';
+
+//reset-------------------------------------------------------------
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//css---------------------------------------------------------------
+
+body{
+    background-color: variaveis.$bgcolor;
+}
+
+//mixins------------------------------------------------------------
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$co2;
+}
+
+@mixin title($fontSize:28px){
+    @include text($fontSize);
+    color: variaveis.$cortexto;
+}
+
+//textos------------------------------------------------------------
+
+.text--big{
+    @include text(18px);
+}
+
+.text{
+    @include text;
+}
+
+.text--small{
+    @include text(12px);
+}
+
+.title--big{
+    @include title(44px);
+}
+
+.title{
+    @include title;
+}
+
+.title--small{
+    @include title(28px);
+}
+
+.link-text{
+    @include text(18px);
+    color: variaveis.$cortexto;
+    text-decoration: underline; 
+}
